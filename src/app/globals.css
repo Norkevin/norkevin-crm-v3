@@ -1,0 +1,106 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 210 11% 15%;
+    --card: 0 0% 100%;
+    --card-foreground: 210 11% 15%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 11% 15%;
+    --primary: 153 90% 32%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 160 30% 96%;
+    --secondary-foreground: 210 11% 15%;
+    --muted: 210 20% 96%;
+    --muted-foreground: 215 12% 47%;
+    --accent: 153 40% 94%;
+    --accent-foreground: 153 90% 22%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 214 20% 90%;
+    --input: 214 20% 90%;
+    --ring: 153 90% 32%;
+    --radius: 0.5rem;
+    --sn-nav: 210 20% 26%;          /* dark slate top nav */
+    --sn-nav-hover: 210 20% 32%;
+    --sn-app-bg: 210 20% 96%;       /* app content background */
+    --sn-green: 153 90% 32%;
+    --sn-green-dark: 153 90% 26%;
+    --sn-mint: 160 55% 93%;
+    --chart-1: 153 90% 36%;
+    --chart-2: 199 60% 55%;
+    --chart-3: 43 74% 60%;
+    --chart-4: 340 75% 62%;
+    --chart-5: 265 55% 62%;
+  }
+
+  .dark {
+    --background: 210 15% 12%;
+    --foreground: 0 0% 95%;
+    --card: 210 15% 15%;
+    --card-foreground: 0 0% 95%;
+    --popover: 210 15% 12%;
+    --popover-foreground: 0 0% 95%;
+    --primary: 153 70% 42%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 210 12% 20%;
+    --secondary-foreground: 0 0% 95%;
+    --muted: 210 12% 20%;
+    --muted-foreground: 210 10% 65%;
+    --accent: 210 12% 22%;
+    --accent-foreground: 0 0% 95%;
+    --destructive: 0 62% 45%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 210 12% 24%;
+    --input: 210 12% 24%;
+    --ring: 153 70% 42%;
+    --sn-app-bg: 210 15% 10%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  }
+}
+
+@layer utilities {
+  .bg-sn-nav {
+    background-color: hsl(var(--sn-nav));
+  }
+  .bg-sn-app {
+    background-color: hsl(var(--sn-app-bg));
+  }
+  .text-sn-green {
+    color: hsl(var(--sn-green));
+  }
+  .bg-sn-green {
+    background-color: hsl(var(--sn-green));
+  }
+  /* subtle scrollbars */
+  .thin-scroll::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  .thin-scroll::-webkit-scrollbar-thumb {
+    background-color: hsl(var(--border));
+    border-radius: 999px;
+  }
+  .thin-scroll::-webkit-scrollbar-track {
+    background: transparent;
+  }
+}
+
+/* Number inputs: hide spinners */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
